@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Interactive map showing the spread of newspapers in Sweden">
-  <title>Swedish Newspapers Map</title>
+  <title>Map of Swedish Newspapers </title>
   
   <style>
     /* Set the size of the map */
@@ -15,7 +15,7 @@
   </style>
 </head>
 <body>
-  <h3>Swedish Newspapers Map</h3>
+  <h3>Map of Swedish Newspapers</h3>
   <!-- The div where the map will appear -->
   <div id="map"></div>
 
@@ -36,40 +36,44 @@
         center: sweden,
       });
 
-      // Example marker in Stockholm
-      const stockholm = { lat: 59.3293, lng: 18.0686 };
-      const marker = new google.maps.Marker({
-        position: stockholm,
-        map: map,
-        title: "Dagens Nyheter",
-      });
+      // Array of locations (newspapers) with lat/lng and info window content
+      const locations = [
+        {
+          position: { lat: 59.3293, lng: 18.0686 },
+          title: "Dagens Nyheter",
+          content: "<h4>Dagens Nyheter</h4><p>Aktiv from. 1864.</p>",
+        },
+        {
+          position: { lat: 59.27412, lng: 15.2066 },
+          title: "Hemmets vän",
+          content: "<h4>Hemmets vän</h4><p>Christian newspaper from Örebro.</p>",
+        },
+        {
+          position: { lat: 57.7089, lng: 11.9746 },
+          title: "Göteborgs-Posten",
+          content: "<h4>Göteborgs-Posten</h4><p>Aktiv från 1858.</p>",
+        }
+      ];
 
-      // Info window for Stockholm marker
-      const infoWindow = new google.maps.InfoWindow({
-        content: "<h4>Dagens Nyheter</h4><p>Major Swedish newspaper</p>",
-      });
+      // Loop through the locations array to create markers and info windows
+      locations.forEach(location => {
+        const marker = new google.maps.Marker({
+          position: location.position,
+          map: map,
+          title: location.title
+        });
 
-      // Add a click listener to show the info window
-      marker.addListener("click", () => {
-        infoWindow.open(map, marker);
-      });
+        const infoWindow = new google.maps.InfoWindow({
+          content: location.content
+        });
 
-      // Example marker in Örebro
-      const Orebro = { lat: 59.27412, lng: 15.2066 };
-      const markerOrebro = new google.maps.Marker({
-        position: Orebro,
-        map: map,
-        title: "Hemmets vän",
-      });
-
-      const infoWindowOrebro = new google.maps.InfoWindow({
-        content: "<h4>Hemmets vän</h4><p>Christian newspaper from Örebro.</p>",
-      });
-
-      markerOrebro.addListener("click", () => {
-        infoWindowOrebro.open(map, markerOrebro);
+        marker.addListener("click", () => {
+          infoWindow.open(map, marker);
+        });
       });
     }
   </script>
 </body>
 </html>
+
+
