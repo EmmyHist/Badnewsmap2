@@ -37,48 +37,73 @@
       });
 
       // Array of locations (newspapers) with lat/lng and info window content
-      const locations = [
-        {
-          position: { lat: 59.3293, lng: 18.0686 },
-          title: "Aftonbladet",
-          content: "<h4>Aftonbladet</h4><p>Major Swedish newspaper from Stockholm.</p>",
-        },
-        {
-          position: { lat: 57.9169, lng: 12.5400 },
-          title: "Alingsås Tidning",
-          content: "<h4>Alingsås Tidning</h4><p>Local newspaper from Alingsås.</p>",
-        },
-        {
-          position: { lat: 55.6050, lng: 13.0038 },
-          title: "Arbetet",
-          content: "<h4>Arbetet</h4><p>Newspaper from Malmö.</p>",
-        },
-        {
-          position: { lat: 59.3845, lng: 15.8490 },
-          title: "Arboga Tidning",
-          content: "<h4>Arboga Tidning</h4><p>Newspaper from Arboga.</p>",
-        },
-        {
-          position: { lat: 59.6007, lng: 12.5890 },
-          title: "Arvika Nyheter",
-          content: "<h4>Arvika Nyheter</h4><p>Local news from Arvika.</p>",
-        },
-        {
-          position: { lat: 60.1941, lng: 16.1897 },
-          title: "Avesta Tidning",
-          content: "<h4>Avesta Tidning</h4><p>Newspaper from Avesta.</p>",
-        },
-        {
-          position: { lat: 56.6613, lng: 16.3569 },
-          title: "Barometern",
-          content: "<h4>Barometern</h4><p>Newspaper from Kalmar.</p>",
-        },
-        {
-          position: { lat: 56.1611, lng: 15.5866 },
-          title: "Blekinge Läns Tidning",
-          content: "<h4>Blekinge Läns Tidning</h4><p>Newspaper from Karlskrona.</p>",
-        }
-      ];
+    const locations = [
+  // Previous locations
+  {
+    position: { lat: 59.3293, lng: 18.0686 },
+    title: "Aftonbladet",
+    content: "<h4>Aftonbladet</h4><p>Major Swedish newspaper from Stockholm.</p>",
+  },
+  {
+    position: { lat: 57.9169, lng: 12.5400 },
+    title: "Alingsås Tidning",
+    content: "<h4>Alingsås Tidning</h4><p>Local newspaper from Alingsås.</p>",
+  },
+  {
+    position: { lat: 55.6050, lng: 13.0038 },
+    title: "Arbetet",
+    content: "<h4>Arbetet</h4><p>Newspaper from Malmö.</p>",
+  },
+  {
+    position: { lat: 59.3845, lng: 15.8490 },
+    title: "Arboga Tidning",
+    content: "<h4>Arboga Tidning</h4><p>Newspaper from Arboga.</p>",
+  },
+  {
+    position: { lat: 59.6007, lng: 12.5890 },
+    title: "Arvika Nyheter",
+    content: "<h4>Arvika Nyheter</h4><p>Local news from Arvika.</p>",
+  },
+  {
+    position: { lat: 60.1941, lng: 16.1897 },
+    title: "Avesta Tidning",
+    content: "<h4>Avesta Tidning</h4><p>Newspaper from Avesta.</p>",
+  },
+  {
+    position: { lat: 56.6613, lng: 16.3569 },
+    title: "Barometern",
+    content: "<h4>Barometern</h4><p>Newspaper from Kalmar.</p>",
+  },
+  {
+    position: { lat: 56.1611, lng: 15.5866 },
+    title: "Blekinge Läns Tidning",
+    content: "<h4>Blekinge Läns Tidning</h4><p>Newspaper from Karlskrona.</p>",
+  },
+  
+  {
+    position: { lat: 58.3501, lng: 11.9335 },
+    title: "Bohusläningen",
+    content: "<h4>Bohusläningen</h4><p>Newspaper from Uddevalla.</p>",
+  },
+  {
+    position: { lat: 60.4831, lng: 15.4378 },
+    title: "Borlänge Tidning",
+    content: "<h4>Borlänge Tidning</h4><p>Newspaper from Borlänge.</p>",
+  },
+  {
+    position: { lat: 57.7210, lng: 12.9401 },
+    title: "Borås Tidning",
+    content: "<h4>Borås Tidning</h4><p>Newspaper from Borås.</p>",
+  },
+  {
+    position: { lat: 59.5147, lng: 15.9923 },
+    title: "Bärgslagsbladet",
+    content: "<h4>Bärgslagsbladet</h4><p>Newspaper from Köping.</p>",
+  }
+];
+
+// Code to add markers for all these locations remains the same.
+
 
       // Loop through the locations array to create markers and info windows
       locations.forEach(location => {
